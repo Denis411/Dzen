@@ -10,12 +10,12 @@ class CompareViewController: UIViewController {
     }
     
     private func setup() {
+        firstTableView.register(UINib(nibName: "CompareTableViewCell", bundle: nil), forCellReuseIdentifier: "CompareTableViewCell")
         firstTableView.delegate = self
         firstTableView.dataSource = self
+        secondTableView.register(UINib(nibName: "CompareTableViewCell", bundle: nil), forCellReuseIdentifier: "CompareTableViewCell")
         secondTableView.delegate = self
         secondTableView.dataSource = self
-        firstTableView.register(UINib(nibName: "CompareTableViewCell", bundle: nil), forCellReuseIdentifier: "CompareTableViewCell")
-        secondTableView.register(UINib(nibName: "CompareTableViewCell", bundle: nil), forCellReuseIdentifier: "CompareTableViewCell")
     }
 }
 
