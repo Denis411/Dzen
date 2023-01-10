@@ -27,6 +27,9 @@
 		11EDB579296AB56800F0CF69 /* CompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB577296AB56800F0CF69 /* CompareTableViewCell.swift */; };
 		11EDB57A296AB56800F0CF69 /* CompareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EDB578296AB56800F0CF69 /* CompareTableViewCell.xib */; };
 		11EDB57C296AE04100F0CF69 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB57B296AE04100F0CF69 /* CompareViewModel.swift */; };
+		11EDB57F296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB57D296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift */; };
+		11EDB580296C91E400F0CF69 /* AnswerOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EDB57E296C91E400F0CF69 /* AnswerOptionCollectionViewCell.xib */; };
+		11EDB582296C949F00F0CF69 /* InsertTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB581296C949F00F0CF69 /* InsertTextViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		11EDB577296AB56800F0CF69 /* CompareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareTableViewCell.swift; sourceTree = "<group>"; };
 		11EDB578296AB56800F0CF69 /* CompareTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompareTableViewCell.xib; sourceTree = "<group>"; };
 		11EDB57B296AE04100F0CF69 /* CompareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
+		11EDB57D296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		11EDB57E296C91E400F0CF69 /* AnswerOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerOptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		11EDB581296C949F00F0CF69 /* InsertTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertTextViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				11EDB55B2969645600F0CF69 /* CompareViewController.swift */,
-				11EDB57B296AE04100F0CF69 /* CompareViewModel.swift */,
 				11EDB55C2969645600F0CF69 /* CompareViewController.xib */,
 				11EDB577296AB56800F0CF69 /* CompareTableViewCell.swift */,
 				11EDB578296AB56800F0CF69 /* CompareTableViewCell.xib */,
+				11EDB57B296AE04100F0CF69 /* CompareViewModel.swift */,
 			);
 			path = CompareViewController;
 			sourceTree = "<group>";
@@ -127,6 +133,9 @@
 			children = (
 				11EDB5602969650800F0CF69 /* InsertTextViewController.swift */,
 				11EDB5612969650800F0CF69 /* InsertTextViewController.xib */,
+				11EDB57D296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift */,
+				11EDB57E296C91E400F0CF69 /* AnswerOptionCollectionViewCell.xib */,
+				11EDB581296C949F00F0CF69 /* InsertTextViewModel.swift */,
 			);
 			path = InsertTextViewController;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 				11EDB5682969655E00F0CF69 /* WriteRightViewController.xib in Resources */,
 				11EDB5632969650800F0CF69 /* InsertTextViewController.xib in Resources */,
 				11EDB54E296960FD00F0CF69 /* LaunchScreen.storyboard in Resources */,
+				11EDB580296C91E400F0CF69 /* AnswerOptionCollectionViewCell.xib in Resources */,
 				11EDB5742969783000F0CF69 /* Assets.xcassets in Resources */,
 				11EDB559296962B000F0CF69 /* SurveyViewController.xib in Resources */,
 			);
@@ -233,10 +243,12 @@
 				11EDB544296960F200F0CF69 /* SceneDelegate.swift in Sources */,
 				11EDB5622969650800F0CF69 /* InsertTextViewController.swift in Sources */,
 				11EDB579296AB56800F0CF69 /* CompareTableViewCell.swift in Sources */,
+				11EDB57F296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift in Sources */,
 				11EDB5712969709800F0CF69 /* SurveyTableViewCell.swift in Sources */,
 				11EDB5672969655E00F0CF69 /* WriteRightViewController.swift in Sources */,
 				11EDB56D296965EC00F0CF69 /* StarRateViewController.swift in Sources */,
 				11EDB5762969795100F0CF69 /* SurveyViewModel.swift in Sources */,
+				11EDB582296C949F00F0CF69 /* InsertTextViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
