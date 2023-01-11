@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        let surveyVC = InsertTextViewController()
+        let surveyVC = SurveyViewController()
         let navController = UINavigationController(rootViewController: surveyVC)
         window?.rootViewController = navController
         self.window?.makeKeyAndVisible()

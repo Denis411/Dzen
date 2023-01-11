@@ -22,10 +22,10 @@ class SurveyTableViewCell: UITableViewCell {
         markImageView.isHidden = false
     }
     
-    func setupCell(choiseName: String, percentOfChoise: String) {
-        markImageView.isHidden = true
-        percentOfChoiseNameLabel.isHidden = true
+    func setupCell(choiseName: String, percentOfChoise: Int) {
+//        markImageView.isHidden = true
+//        percentOfChoiseNameLabel.isHidden = true
         choiseNameLabel.text = choiseName
-        percentOfChoiseNameLabel.text = percentOfChoise + "%"
+        percentOfChoiseNameLabel.text = String(percentOfChoise) + "%"
     }
 }

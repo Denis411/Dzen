@@ -20,10 +20,12 @@ class SurveyViewController: UIViewController {
 }
 
 extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        surveyTableView.deselectRow(at: indexPath, animated: false)
-        guard let cell = surveyTableView.cellForRow(at: indexPath)
-        else { return }
+        let cell = surveyTableView.cellForRow(at: indexPath)
+        surveyViewModel.addCount(indexPath: indexPath.row)
+        surveyTableView.reloadData()
+        
     }
     
     /*
@@ -39,7 +41,7 @@ extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: indexPath) as! SurveyTableViewCell
         
-        cell.setupCell(choiseName: surveyViewModel.surveyArray[indexPath.row], percentOfChoise: "0")
+        cell.setupCell(choiseName: surveyViewModel.surveyArray[indexPath.row].0, percentOfChoise: surveyViewModel.getChoisePercents(indexPath: indexPath.row))
         
         return cell
     }
