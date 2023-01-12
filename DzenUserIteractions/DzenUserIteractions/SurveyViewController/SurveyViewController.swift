@@ -22,10 +22,12 @@ class SurveyViewController: UIViewController {
 extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = surveyTableView.cellForRow(at: indexPath)
+        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: indexPath) as! SurveyTableViewCell
+//        let cell = surveyTableView.cellForRow(at: indexPath) as! SurveyTableViewCell
         surveyViewModel.addCount(indexPath: indexPath.row)
+        cell.showMarkImageView()
         surveyTableView.reloadData()
-        
+        surveyTableView.isUserInteractionEnabled = false
     }
     
     /*
@@ -39,11 +41,11 @@ extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: indexPath) as! SurveyTableViewCell
-        
-        cell.setupCell(choiseName: surveyViewModel.surveyArray[indexPath.row].0, percentOfChoise: surveyViewModel.getChoisePercents(indexPath: indexPath.row))
+        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell",
+                                                       for: indexPath) as! SurveyTableViewCell
+        cell.setupCell(choiseName: surveyViewModel.surveyArray[indexPath.row].0,
+                       percentOfChoise: Int(surveyViewModel.getChoisePercents(indexPath: indexPath.row)))
         
         return cell
     }
 }
-
