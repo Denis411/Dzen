@@ -15,20 +15,28 @@ class SurveyViewController: UIViewController {
     private func setup() {
         self.surveyTableView.delegate = self
         self.surveyTableView.dataSource = self
-        self.surveyTableView.register(UINib(nibName: "SurveyTableViewCell", bundle: nil), forCellReuseIdentifier: "SurveyTableViewCell")
+        self.surveyTableView.register(UINib(nibName: "SurveyTableViewCell",
+                                            bundle: nil), forCellReuseIdentifier: "SurveyTableViewCell")
     }
 }
 
 extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: indexPath) as! SurveyTableViewCell
-//        let cell = surveyTableView.cellForRow(at: indexPath) as! SurveyTableViewCell
+        if let cell = surveyTableView.cellForRow(at: indexPath) as? SurveyTableViewCell {
         surveyViewModel.addCount(indexPath: indexPath.row)
         cell.showMarkImageView()
         surveyTableView.reloadData()
         surveyTableView.isUserInteractionEnabled = false
+        } else { return }
     }
+    
+//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+//        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell",
+//                                                       for: indexPath) as! SurveyTableViewCell
+//        cell.showMarkImageView()
+//        surveyTableView.reloadData()
+//    }
     
     /*
     нужно отобразить все проценты

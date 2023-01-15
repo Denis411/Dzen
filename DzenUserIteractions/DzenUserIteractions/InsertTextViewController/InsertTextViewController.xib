@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertTextViewController" customModule="DzenUserIteractions" customModuleProvider="target">
             <connections>
                 <outlet property="answerOptionCollectionView" destination="2pM-fJ-5YD" id="Yod-d0-ZhD"/>
-                <outlet property="taskTextField" destination="qij-vK-dZ1" id="hjl-mq-BcL"/>
+                <outlet property="taskColletcionView" destination="1wt-U1-jaC" id="Af5-MO-emX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,21 +20,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Быть _______ не быть,  _______ в чем вопрос." borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qij-vK-dZ1">
-                    <rect key="frame" x="0.0" y="44" width="414" height="120"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="5YD-uh-9jn"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2pM-fJ-5YD">
-                    <rect key="frame" x="0.0" y="164" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="244" width="414" height="250"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="TCs-Pp-wuu"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8X5-Rh-yhE">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1wt-U1-jaC">
+                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="FTH-nB-uZP"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jX5-JT-Z8Z">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -47,15 +52,18 @@
             <constraints>
                 <constraint firstItem="2pM-fJ-5YD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6yl-Nc-qqU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2pM-fJ-5YD" secondAttribute="trailing" id="Mg9-bK-2EA"/>
-                <constraint firstItem="qij-vK-dZ1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SG9-oK-mUi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qij-vK-dZ1" secondAttribute="trailing" id="Wuz-7j-59p"/>
-                <constraint firstItem="qij-vK-dZ1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="saK-dE-u08"/>
-                <constraint firstItem="2pM-fJ-5YD" firstAttribute="top" secondItem="qij-vK-dZ1" secondAttribute="bottom" id="uRT-1C-4eV"/>
+                <constraint firstItem="1wt-U1-jaC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ONi-y1-U4L"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1wt-U1-jaC" secondAttribute="trailing" id="aAm-aI-lJL"/>
+                <constraint firstItem="1wt-U1-jaC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dn5-LG-RVY"/>
+                <constraint firstItem="2pM-fJ-5YD" firstAttribute="top" secondItem="1wt-U1-jaC" secondAttribute="bottom" id="m66-Ls-cRR"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="67"/>
+            <point key="canvasLocation" x="137.68115942028987" y="66.964285714285708"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

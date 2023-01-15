@@ -10,19 +10,12 @@ class SurveyTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if selected {
-            self.markImageView.isHidden = false
-        }
-    }
-    
     func showChoisePercents() {
         percentOfChoiseNameLabel.isHidden = false
     }
     
     func showMarkImageView() {
-        markImageView.isHidden = false
+        self.markImageView.isHidden = false
     }
     
     func setupCell(choiseName: String, percentOfChoise: Int) {
