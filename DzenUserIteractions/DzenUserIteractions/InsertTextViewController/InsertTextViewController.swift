@@ -23,7 +23,6 @@ class InsertTextViewController: UIViewController {
     
     @objc private func touched(_ gestureRecognizer: UIPanGestureRecognizer) {
         if let touchedView = gestureRecognizer.view {
-            
             if gestureRecognizer.state == .began {
                 let beginningPosition = gestureRecognizer.location(in: touchedView)
             } else if gestureRecognizer.state == .changed {
@@ -33,6 +32,7 @@ class InsertTextViewController: UIViewController {
                 touchedView.frame.origin = CGPoint(x: newX, y: newY)
                 gestureRecognizer.setTranslation(CGPoint.zero, in: touchedView)
             }
+            
         }
     }
 }
@@ -54,6 +54,9 @@ extension InsertTextViewController: UICollectionViewDelegate, UICollectionViewDa
             let cell = taskColletcionView.dequeueReusableCell(withReuseIdentifier: "AnswerOptionCollectionViewCell", for: indexPath) as! AnswerOptionCollectionViewCell
             if indexPath.item == 1 || indexPath.item == 4 {
                 cell.setupTaskCell(taskWordName: changeTaskName(taskName: insertTexViewModel.taskArray[indexPath.item]))
+                cell.layer.cornerRadius = 3
+                cell.layer.borderWidth = 0.5
+                cell.layer.borderColor = .init(red: 1/128, green: 1/128, blue: 1/128, alpha: 1)
             } else {
                 cell.setupTaskCell(taskWordName: self.insertTexViewModel.taskArray[indexPath.item])
             }
@@ -83,7 +86,7 @@ extension InsertTextViewController: UICollectionViewDelegate, UICollectionViewDa
             let size = CGSize(width: 100, height: 50)
             let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
             let estimatedFrame = NSString(string: insertTexViewModel.answerOptionsArray[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-            return CGSize(width: estimatedFrame.width + 10, height: estimatedFrame.height + 5)
+            return CGSize(width: estimatedFrame.width + 4, height: estimatedFrame.height + 5)
             
         default: return CGSize(width: 100, height: 100)
         }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11AC697729757639004BFA7D /* TextPartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC697529757639004BFA7D /* TextPartCollectionViewCell.swift */; };
+		11AC697829757639004BFA7D /* TextPartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AC697629757639004BFA7D /* TextPartCollectionViewCell.xib */; };
+		11AC697C2975772C004BFA7D /* WriteOptionTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC697A2975772C004BFA7D /* WriteOptionTextCollectionViewCell.swift */; };
+		11AC697D2975772C004BFA7D /* WriteOptionTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AC697B2975772C004BFA7D /* WriteOptionTextCollectionViewCell.xib */; };
+		11AC697F2975778D004BFA7D /* WrightRightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC697E2975778D004BFA7D /* WrightRightViewModel.swift */; };
 		11EDB542296960F200F0CF69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB541296960F200F0CF69 /* AppDelegate.swift */; };
 		11EDB544296960F200F0CF69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EDB543296960F200F0CF69 /* SceneDelegate.swift */; };
 		11EDB54E296960FD00F0CF69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EDB54C296960FD00F0CF69 /* LaunchScreen.storyboard */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11AC697529757639004BFA7D /* TextPartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPartCollectionViewCell.swift; sourceTree = "<group>"; };
+		11AC697629757639004BFA7D /* TextPartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPartCollectionViewCell.xib; sourceTree = "<group>"; };
+		11AC697A2975772C004BFA7D /* WriteOptionTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteOptionTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		11AC697B2975772C004BFA7D /* WriteOptionTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteOptionTextCollectionViewCell.xib; sourceTree = "<group>"; };
+		11AC697E2975778D004BFA7D /* WrightRightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrightRightViewModel.swift; sourceTree = "<group>"; };
 		11EDB53E296960F200F0CF69 /* DzenUserIteractions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DzenUserIteractions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EDB541296960F200F0CF69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11EDB543296960F200F0CF69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +155,11 @@
 			children = (
 				11EDB5652969655E00F0CF69 /* WriteRightViewController.swift */,
 				11EDB5662969655E00F0CF69 /* WriteRightViewController.xib */,
+				11AC697529757639004BFA7D /* TextPartCollectionViewCell.swift */,
+				11AC697629757639004BFA7D /* TextPartCollectionViewCell.xib */,
+				11AC697A2975772C004BFA7D /* WriteOptionTextCollectionViewCell.swift */,
+				11AC697B2975772C004BFA7D /* WriteOptionTextCollectionViewCell.xib */,
+				11AC697E2975778D004BFA7D /* WrightRightViewModel.swift */,
 			);
 			path = WriteRightViewController;
 			sourceTree = "<group>";
@@ -218,7 +233,9 @@
 			files = (
 				11EDB55E2969645600F0CF69 /* CompareViewController.xib in Resources */,
 				11EDB5722969709800F0CF69 /* SurveyTableViewCell.xib in Resources */,
+				11AC697D2975772C004BFA7D /* WriteOptionTextCollectionViewCell.xib in Resources */,
 				11EDB56E296965EC00F0CF69 /* StarRateViewController.xib in Resources */,
+				11AC697829757639004BFA7D /* TextPartCollectionViewCell.xib in Resources */,
 				11EDB57A296AB56800F0CF69 /* CompareTableViewCell.xib in Resources */,
 				11EDB5682969655E00F0CF69 /* WriteRightViewController.xib in Resources */,
 				11EDB5632969650800F0CF69 /* InsertTextViewController.xib in Resources */,
@@ -240,12 +257,15 @@
 				11EDB542296960F200F0CF69 /* AppDelegate.swift in Sources */,
 				11EDB558296962B000F0CF69 /* SurveyViewController.swift in Sources */,
 				11EDB57C296AE04100F0CF69 /* CompareViewModel.swift in Sources */,
+				11AC697F2975778D004BFA7D /* WrightRightViewModel.swift in Sources */,
+				11AC697729757639004BFA7D /* TextPartCollectionViewCell.swift in Sources */,
 				11EDB544296960F200F0CF69 /* SceneDelegate.swift in Sources */,
 				11EDB5622969650800F0CF69 /* InsertTextViewController.swift in Sources */,
 				11EDB579296AB56800F0CF69 /* CompareTableViewCell.swift in Sources */,
 				11EDB57F296C91E400F0CF69 /* AnswerOptionCollectionViewCell.swift in Sources */,
 				11EDB5712969709800F0CF69 /* SurveyTableViewCell.swift in Sources */,
 				11EDB5672969655E00F0CF69 /* WriteRightViewController.swift in Sources */,
+				11AC697C2975772C004BFA7D /* WriteOptionTextCollectionViewCell.swift in Sources */,
 				11EDB56D296965EC00F0CF69 /* StarRateViewController.swift in Sources */,
 				11EDB5762969795100F0CF69 /* SurveyViewModel.swift in Sources */,
 				11EDB582296C949F00F0CF69 /* InsertTextViewModel.swift in Sources */,

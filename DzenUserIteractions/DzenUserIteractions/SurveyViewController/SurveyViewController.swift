@@ -8,7 +8,7 @@ class SurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setup()
     }
     
@@ -21,28 +21,20 @@ class SurveyViewController: UIViewController {
 }
 
 extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = surveyTableView.cellForRow(at: indexPath) as? SurveyTableViewCell {
-        surveyViewModel.addCount(indexPath: indexPath.row)
-        cell.showMarkImageView()
-        surveyTableView.reloadData()
-        surveyTableView.isUserInteractionEnabled = false
-        } else { return }
+            cell.showMarkImageView()
+            configureCells()
+            surveyTableView.setNeedsLayout()
+            surveyTableView.layoutIfNeeded()
+            surveyTableView.isUserInteractionEnabled = false
+        }
     }
     
-//    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-//        let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell",
-//                                                       for: indexPath) as! SurveyTableViewCell
-//        cell.showMarkImageView()
-//        surveyTableView.reloadData()
-//    }
-    
     /*
-    нужно отобразить все проценты
-    нужна только одна галочка, чтобы другие не могли выбираться
-    отобразить в зависомсти от процентов выбора других
-    */
+     нужно отобразить все проценты
+     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         surveyViewModel.surveyArray.count
@@ -55,5 +47,16 @@ extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
                        percentOfChoise: Int(surveyViewModel.getChoisePercents(indexPath: indexPath.row)))
         
         return cell
+    }
+}
+
+extension SurveyViewController {
+    func configureCells() {
+        for j in 0..<surveyViewModel.surveyArray.count {
+            if let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: IndexPath(index: j)) as? SurveyTableViewCell {
+                cell.showChoisePercents()
+                surveyTableView.layoutSubviews()
+            }
+        }
     }
 }
