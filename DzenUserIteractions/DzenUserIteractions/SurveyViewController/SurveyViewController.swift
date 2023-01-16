@@ -23,12 +23,17 @@ class SurveyViewController: UIViewController {
 extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = surveyTableView.cellForRow(at: indexPath) as? SurveyTableViewCell {
-            cell.showMarkImageView()
-            configureCells()
-            surveyTableView.setNeedsLayout()
-            surveyTableView.layoutIfNeeded()
-            surveyTableView.isUserInteractionEnabled = false
+
+        guard let cell = tableView.cellForRow(at: indexPath) as? SurveyTableViewCell else { return }
+        cell.showMarkImageView()
+        
+        //         not surverTableView
+//         if let cell = surveyTableView.cellForRow(at: indexPath) as? SurveyTableViewCell {
+//             cell.showMarkImageView()
+//             this logic must be in showMarkImageView()
+//             surveyTableView.setNeedsLayout()
+//             surveyTableView.layoutIfNeeded()
+//             surveyTableView.isUserInteractionEnabled = false
         }
     }
     
@@ -47,16 +52,5 @@ extension SurveyViewController: UITableViewDelegate, UITableViewDataSource {
                        percentOfChoise: Int(surveyViewModel.getChoisePercents(indexPath: indexPath.row)))
         
         return cell
-    }
-}
-
-extension SurveyViewController {
-    func configureCells() {
-        for j in 0..<surveyViewModel.surveyArray.count {
-            if let cell = surveyTableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: IndexPath(index: j)) as? SurveyTableViewCell {
-                cell.showChoisePercents()
-                surveyTableView.layoutSubviews()
-            }
-        }
     }
 }
