@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2pM-fJ-5YD">
-                    <rect key="frame" x="0.0" y="244" width="414" height="250"/>
+                    <rect key="frame" x="0.0" y="144" width="414" height="250"/>
                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="TCs-Pp-wuu"/>
@@ -34,10 +34,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1wt-U1-jaC">
-                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="FTH-nB-uZP"/>
+                        <constraint firstAttribute="height" constant="100" id="FTH-nB-uZP"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jX5-JT-Z8Z">
                         <size key="itemSize" width="128" height="128"/>

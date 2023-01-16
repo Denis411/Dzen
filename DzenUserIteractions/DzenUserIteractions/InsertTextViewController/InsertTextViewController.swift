@@ -52,13 +52,18 @@ extension InsertTextViewController: UICollectionViewDelegate, UICollectionViewDa
             // TaskCollection
         case taskColletcionView:
             let cell = taskColletcionView.dequeueReusableCell(withReuseIdentifier: "AnswerOptionCollectionViewCell", for: indexPath) as! AnswerOptionCollectionViewCell
-            cell.setupCell(optionName: self.insertTexViewModel.taskArray[indexPath.item], height: 20)
+            if indexPath.item == 1 || indexPath.item == 4 {
+                cell.setupTaskCell(taskWordName: changeTaskName(taskName: insertTexViewModel.taskArray[indexPath.item]))
+            } else {
+                cell.setupTaskCell(taskWordName: self.insertTexViewModel.taskArray[indexPath.item])
+            }
             return cell
             // AnswerCollection
         case answerOptionCollectionView:
             let gertureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(touched))
             let cell = answerOptionCollectionView.dequeueReusableCell(withReuseIdentifier: "AnswerOptionCollectionViewCell", for: indexPath) as! AnswerOptionCollectionViewCell
-            cell.setupCell(optionName: self.insertTexViewModel.answerOptionsArray[indexPath.item], height: 20)
+            cell.setupAnswerCell(optionName: self.insertTexViewModel.answerOptionsArray[indexPath.item])
+            
             cell.addGestureRecognizer(gertureRecognizer)
             return cell
             
@@ -67,6 +72,34 @@ extension InsertTextViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 50)
+        switch collectionView {
+        case taskColletcionView:
+            let size = CGSize(width: 100, height: 30)
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
+            let estimatedFrame = NSString(string: insertTexViewModel.taskArray[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            return CGSize(width: estimatedFrame.width, height: estimatedFrame.height)
+            
+        case answerOptionCollectionView:
+            let size = CGSize(width: 100, height: 50)
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
+            let estimatedFrame = NSString(string: insertTexViewModel.answerOptionsArray[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+            return CGSize(width: estimatedFrame.width + 10, height: estimatedFrame.height + 5)
+            
+        default: return CGSize(width: 100, height: 100)
+        }
     }
 }
+
+extension InsertTextViewController {
+    private func changeTaskName(taskName: String) -> String {
+        let letters = taskName
+        var result = ""
+        let start = letters.startIndex
+        let end = letters.endIndex
+        for _ in letters {
+        result += letters.replacingCharacters(in: start..<end, with: "_")
+        }
+        return(result)
+    }
+}
+
